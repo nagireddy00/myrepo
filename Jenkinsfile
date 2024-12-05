@@ -26,7 +26,7 @@ pipeline {
         stage('terraform Deploy') {
             when {
                 expression{
-                    params.action =="apply"
+                    params.action=="apply"
                 } 
             }
             input {
@@ -41,12 +41,12 @@ pipeline {
         stage('terraform destroy') {
             when {
                 expression{
-                    params.action =="destroy"
+                    params.action=="destroy"
                 } 
             }
             input {
                 message 'should we continue?'
-                ok "you shou continue destroy"
+                ok "you should continue destroy"
             }
             steps{
                 sh "terraform destroy -auto-approve"
