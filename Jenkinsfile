@@ -35,7 +35,7 @@ pipeline {
                 ok "you shou continue"
             }
             steps{
-                sh "terraform apply -auto-aprove"
+                sh "terraform apply -auto-approve"
             }
         }
         stage('terraform destroy') {
@@ -45,13 +45,23 @@ pipeline {
                 } 
             }
             input {
-
                 message 'should we continue?'
                 ok "you shou continue destroy"
             }
             steps{
-                sh "terraform destroy -auto-aprove"
+                sh "terraform destroy -auto-approve"
             }
+        }
+    }
+    post { 
+        always { 
+            echo 'I will always say Hello again!'
+        }
+        failure { 
+            echo 'this runs when pipeline is failed, used generally to send some alerts'
+        }
+        success{
+            echo 'I will say Hello when pipeline is success'
         }
     }
 }
