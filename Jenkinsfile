@@ -38,7 +38,7 @@ pipeline {
                 sh "terraform apply -auto-aprove"
             }
         }
-        tage('terraform destroy') {
+        stage('terraform destroy') {
             when {
                 expression{
                     params.action =="destroy"
