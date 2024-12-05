@@ -26,7 +26,7 @@ pipeline {
         stage('terraform Deploy') {
             when {
                 expression{
-                    params.action = ="apply"
+                    params.action =="apply"
                 } 
             }
             input {
