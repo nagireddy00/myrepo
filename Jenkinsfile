@@ -41,7 +41,7 @@ pipeline {
         tage('terraform destroy') {
             when {
                 expression{
-                    params.action = ="destroy"
+                    params.action =="destroy"
                 } 
             }
             input {
