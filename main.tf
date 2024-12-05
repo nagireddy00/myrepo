@@ -65,7 +65,6 @@ resource "aws_route_table" "private_rt" {
 
 resource "aws_route_table_association" "rta" {
   subnet_id      = aws_subnet.subnet1.id
-  subnet_id      = aws_subnet.subnet2.id
   route_table_id = aws_route_table.rt.id
 }
 
